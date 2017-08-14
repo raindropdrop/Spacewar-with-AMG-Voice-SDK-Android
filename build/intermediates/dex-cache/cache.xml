@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/Lucy/Desktop/Agora/Hello-Gaming-Agora-Android/app/libs/agora-rtc-sdk.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="53acc60aa14c648fcb63f0f9b511283652025a93">
+        <dex dex="/Users/Lucy/Desktop/Agora/Hello-Gaming-Agora-Android/app/build/intermediates/pre-dexed/debug/agora-rtc-sdk_2a151862d7d95b4329ca4ebff90c349bd39f9145.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Lucy/Desktop/Spacewar-with-AMG-Voice-SDK-Android/app/libs/agora-rtc-sdk.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="53acc60aa14c648fcb63f0f9b511283652025a93">
+        <dex dex="/Users/Lucy/Desktop/Spacewar-with-AMG-Voice-SDK-Android/app/build/intermediates/pre-dexed/debug/agora-rtc-sdk_71c4f21284cf8e13af6267e06ca81616815e4822.jar" />
+    </item>
+
+</items>
