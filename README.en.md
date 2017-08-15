@@ -1,20 +1,25 @@
-# Hello Gaming Agora Android
+# Spacewar with Agora Gaming SDK Android
 
 *其他语言版本： [简体中文](README.md)*
 
-The Hello Gaming Agora Android Sample App is an open-source demo that will help you get voice chat integrated directly into your Android game applications using the Agora Gaming SDK.
+The Spacewar with Agora Gaming SDK Android Sample App is an open-source demo that will help you get voice chat integrated directly into your Android gaming applications using the Agora Gaming SDK.
 
 With this sample app, you can:
 
 - Join / leave channel
+- Select voice mode: free mode, command mode, audience mode
 - Mute / unmute audio
-- Switch speaker
+- Music mixing and audio effect playing
+- Voice morphing (In Progress)
+- Set posotion of voice and audio effect (In Progress)
+- Set volume of voice and audio effect
 
-Agora Gaming SDK supports iOS / Android / Unity3d / Cocos2d. You can find demos of these platform here:
+A tutorial demo can be found here: [Hello-Gaming-Agora-Android](https://github.com/AgoraIO/Hello-Gaming-Agora-Android)
 
-- [Hello-Gaming-Agora-iOS](https://github.com/AgoraIO/Hello-Gaming-Agora-iOS)
-- [Hello-Unity3D-Agora](https://github.com/AgoraIO/Hello-Unity3D-Agora)
-- [Hello-Cocos2d-Agora](https://github.com/AgoraIO/Hello-Cocos2d-Agora)
+Agora Gaming SDK supports iOS / Android / Unity / Cocos2d. You can find demos of these platform here:
+
+- [Spacewar-with-AMG-Voice-SDK-SpriteKit](https://github.com/AgoraIO/Spacewar-with-AMG-Voice-SDK-SpriteKit)
+- [Spacewar-with-AMG-Voice-SDK-Unity](https://github.com/AgoraIO/Spacewar-with-AMG-Voice-SDK-Unity)
 
 ## Running the App
 First, create a developer account at [Agora.io](https://dashboard.agora.io/signin/), and obtain an App ID. Update "app/src/main/res/values/strings_config.xml" with your App ID.
@@ -37,7 +42,7 @@ Or use `Gradle` to build and run.
 ## Connect Us
 
 - You can find full API document at [Document Center](https://docs.agora.io/en/)
-- You can file bugs about this demo at [issue](https://github.com/AgoraIO/Hello-Gaming-Agora-Android/issues)
+- You can file bugs about this demo at [issue](https://github.com/AgoraIO/Spacewar-with-AMG-Voice-SDK-Android/issues)
 
 ## License
 

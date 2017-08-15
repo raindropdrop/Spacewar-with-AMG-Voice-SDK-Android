@@ -8,12 +8,17 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by Lucy on 7/27/17.
  */
 public class DragDropView extends FrameLayout {
 
-    private View parent;
+    private final static Logger log = LoggerFactory.getLogger(DragDropView.class);
+    private int width;
+    private int height;
 
     /**
      * Default Constructor
@@ -21,7 +26,8 @@ public class DragDropView extends FrameLayout {
      */
     public DragDropView(Context context, View parent) {
         super(context);
-        this.parent = parent;
+        width = parent.getWidth();
+        height = parent.getHeight();
     }
 
     /**
@@ -86,6 +92,7 @@ public class DragDropView extends FrameLayout {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             FrameLayout.LayoutParams dragParam = (LayoutParams) v.getLayoutParams();
+
             switch(event.getAction())
             {
                 case MotionEvent.ACTION_MOVE:
@@ -94,14 +101,26 @@ public class DragDropView extends FrameLayout {
                     dragParam.bottomMargin = (int)event.getRawY() + (v.getHeight()/2);
                     dragParam.leftMargin = (int)event.getRawX() - (v.getWidth()/2);
                     dragParam.rightMargin = (int)event.getRawX() + (v.getWidth()/2);
+
+                    log.debug("topMargin: " + dragParam.topMargin + "bottomMargin: " + dragParam.bottomMargin
+                    + "leftMargin: " + dragParam.leftMargin + "rightMargin: " + dragParam.rightMargin);
+
+                    log.debug("parent: " + width + " - " + height);
+
+                    //1080 - 1467
+
+
                     if (dragParam.leftMargin < 0) {
                         dragParam.leftMargin = 0;
-                    } else if (dragParam.rightMargin > 444) {
-                        dragParam.rightMargin = 444;
-                    } else if (dragParam.topMargin < 0) {
+                    }
+                    if (dragParam.rightMargin > width) {
+                        dragParam.leftMargin = width - v.getWidth();
+                    }
+                    if (dragParam.topMargin < 0) {
                         dragParam.topMargin = 0;
-                    } else if (dragParam.bottomMargin > parent.getWidth()){
-                        dragParam.bottomMargin = parent.getWidth();
+                    }
+                    if (dragParam.bottomMargin > height){
+                        dragParam.topMargin = height - v.getHeight() - 10;
                     }
                     v.setLayoutParams(dragParam);
                     break;
@@ -117,12 +136,15 @@ public class DragDropView extends FrameLayout {
 
                     if (dragParam.leftMargin < 0) {
                         dragParam.leftMargin = 0;
-                    } else if (dragParam.rightMargin > parent.getWidth()) {
-                        dragParam.rightMargin = parent.getWidth();
-                    } else if (dragParam.topMargin < 0) {
+                    }
+                    if (dragParam.rightMargin > width) {
+                        dragParam.leftMargin = width - v.getWidth();
+                    }
+                    if (dragParam.topMargin < 0) {
                         dragParam.topMargin = 0;
-                    } else if (dragParam.bottomMargin > parent.getWidth()){
-                        dragParam.bottomMargin = parent.getWidth();
+                    }
+                    if (dragParam.bottomMargin > height){
+                        dragParam.topMargin = height - v.getHeight() - 10;
                     }
                     v.setLayoutParams(dragParam);
                     break;

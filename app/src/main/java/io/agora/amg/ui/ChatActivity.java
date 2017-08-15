@@ -85,7 +85,7 @@ public class ChatActivity extends BaseActivity implements AGEventHandler {
 
     private volatile boolean mAudioMuted = false;
 
-    private volatile int mAudioRouting = -1; // Default
+//    private volatile int mAudioRouting = -1; // Default
 
     private AudioEffectsDialog mAudioEffectsDialog;
     private GlobalAudioEffectStatus mAudioEffectStatus = new GlobalAudioEffectStatus();;
@@ -417,14 +417,14 @@ public class ChatActivity extends BaseActivity implements AGEventHandler {
     public void notifyHeadsetPlugged(final int routing) {
         log.info("notifyHeadsetPlugged " + routing);
 
-        mAudioRouting = routing;
+//        mAudioRouting = routing;
 
-        ImageView iv = (ImageView) findViewById(R.id.switch_speaker_id);
-        if (mAudioRouting == 3) { // Speakerphone
-            iv.setColorFilter(getResources().getColor(R.color.agora_blue), PorterDuff.Mode.MULTIPLY);
-        } else {
-            iv.clearColorFilter();
-        }
+//        ImageView iv = (ImageView) findViewById(R.id.switch_speaker_id);
+//        if (mAudioRouting == 3) { // Speakerphone
+//            iv.setColorFilter(getResources().getColor(R.color.agora_blue), PorterDuff.Mode.MULTIPLY);
+//        } else {
+//            iv.clearColorFilter();
+//        }
     }
 
     public void onSettingClicked(View view){
@@ -861,9 +861,9 @@ public class ChatActivity extends BaseActivity implements AGEventHandler {
         if (on_commander){
             btn_commander.setImageResource(R.drawable.btn_commander);
             on_commander = false;
+            mode = 2;
             Toast.makeText(this.getBaseContext(), "To Audience Mode", Toast.LENGTH_SHORT).show();
             rmvMuteBtn();
-            log.debug("on_commander: " + on_commander);
         } else {
             if (btn_mute == null){
                 //To remain the order of the buttons
@@ -874,6 +874,7 @@ public class ChatActivity extends BaseActivity implements AGEventHandler {
             }
             btn_commander.setImageResource(R.drawable.btn_commander_blue);
             on_commander = true;
+            mode = 1;
             log.debug("on_commander: " + on_commander);
             Toast.makeText(this.getBaseContext(), "To Commander Mode", Toast.LENGTH_SHORT).show();
         }
